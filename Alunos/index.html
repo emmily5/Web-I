@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <link rel="stylesheet" href="style.css"> <!-- Arquivo CSS externo -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo-principal">Cadastro de Alunos</h1>
+
+        <!-- Tabela de alunos cadastrados -->
+        <table class="tabela-alunos">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Curso</th>
+                </tr>
+            </thead>
+            <tbody id="alunosCadastrados">
+                <!-- Alunos cadastrados serão inseridos aqui -->
+            </tbody>
+        </table>
+
+        <!-- Formulário de cadastro de novos alunos -->
+        <div class="form-container">
+            <h2 class="titulo-formulario">Adicionar Novo Aluno</h2>
+            <form id="formCadastro" class="form-cadastro">
+                <div class="form-group">
+                    <label for="nome" class="label-form">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="input-form" placeholder="Digite o nome do aluno" required>
+                </div>
+                <div class="form-group">
+                    <label for="idade" class="label-form">Idade:</label>
+                    <input type="number" id="idade" name="idade" class="input-form" placeholder="Digite a idade do aluno" required>
+                </div>
+                <div class="form-group">
+                    <label for="curso" class="label-form">Curso:</label>
+                    <select id="curso" name="curso" class="input-form" required>
+                        <option value="Desenvolvimento Web">Desenvolvimento Web</option>
+                        <option value="Engenharia de Software">Engenharia de Software</option>
+                        <option value="Ciência de Dados">Ciência de Dados</option>
+                        <option value="Segurança da Informação">Segurança da Informação</option>
+                    </select>
+                </div>
+                <input type="submit" value="Cadastrar Aluno" class="btn-submit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('formCadastro').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value;
+            const curso = document.getElementById('curso').value;
+
+            const tabela = document.getElementById('alunosCadastrados');
+            const novaLinha = tabela.insertRow();
+
+            const colunaNome = novaLinha.insertCell(0);
+            const colunaIdade = novaLinha.insertCell(1);
+            const colunaCurso = novaLinha.insertCell(2);
+
+            colunaNome.textContent = nome;
+            colunaIdade.textContent = idade;
+            colunaCurso.textContent = curso;
+
+            document.getElementById('formCadastro').reset();
+        });
+    </script>
+</body>
+</html>

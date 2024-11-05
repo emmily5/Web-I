@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <div id="text-container">
+        <h1>Quadro de Conteúdo Interativo</h1>
+    </div>
+
+    <div id="text-container2">
+        Selecione uma cor para seus desenhos e divirta-se!
+    </div>
+
+    <div id="container">
+        <p>
+        <label for="colorPicker">Cores:</label>
+        <input type="color" id="colorPicker" value="#000000"> 
+        </p>
+        <canvas id="desenhoCanvas" width="400" height="300"></canvas>
+        <br>
+        <button id="borracha">Borracha</button>
+        <button id="pincel">Pincel</button>
+        <button id="limparCanvas">Limpar canvas</button>
+    </div>
+
+    <script src="script.js"></script> <!-- Link para o arquivo JS -->
+</body>
+</html>
